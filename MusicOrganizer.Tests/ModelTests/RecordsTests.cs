@@ -15,5 +15,18 @@ namespace MusicOrganizer.Tests
       Records newRecords = new Records("test");
       Assert.AreEqual(typeof(Records), newRecords.GetType());
     }
+      
+    [TestMethod]
+    public void Records_AddArtistToRecord_String()
+{
+    string artist = "John Lennon";
+    string title = "Best Hits";
+    Records newRecords = new Records();
+    newRecords.AddArtist(artist, title);
+    string resultArtist = newRecords.Artist;
+    string resultTitle = newRecords.Title;
+    Assert.AreEqual(artist, resultArtist);
+    Assert.AreEqual(title, resultTitle);
+}
     }
   }
